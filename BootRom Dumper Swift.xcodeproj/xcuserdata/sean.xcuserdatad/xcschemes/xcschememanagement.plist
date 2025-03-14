@@ -6,8 +6,33 @@
 	<dict>
 		<key>BootRom Dumper Swift.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>BootRomDumperFramework.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>14A5B26E2D819A12003CFEB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14A5B2892D819E68003CFEB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>14A5B2922D819E68003CFEB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

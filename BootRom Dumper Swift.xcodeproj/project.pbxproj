@@ -6,6 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		14A5B2942D819E69003CFEB0 /* BootRomDumperFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A5B28A2D819E68003CFEB0 /* BootRomDumperFramework.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		14A5B2952D819E69003CFEB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14A5B2672D819A12003CFEB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14A5B2892D819E68003CFEB0;
+			remoteInfo = BootRomDumperFramework;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		14A5B26D2D819A12003CFEB0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,12 +34,37 @@
 
 /* Begin PBXFileReference section */
 		14A5B26F2D819A12003CFEB0 /* BootRom Dumper Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "BootRom Dumper Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A5B28A2D819E68003CFEB0 /* BootRomDumperFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BootRomDumperFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A5B2932D819E68003CFEB0 /* BootRomDumperFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BootRomDumperFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		14A5B29B2D819E69003CFEB0 /* Exceptions for "BootRomDumperFramework" folder in "BootRomDumperFramework" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				BootRomDumperFramework.h,
+			);
+			target = 14A5B2892D819E68003CFEB0 /* BootRomDumperFramework */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		14A5B2712D819A12003CFEB0 /* BootRom Dumper Swift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "BootRom Dumper Swift";
+			sourceTree = "<group>";
+		};
+		14A5B28B2D819E68003CFEB0 /* BootRomDumperFramework */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				14A5B29B2D819E69003CFEB0 /* Exceptions for "BootRomDumperFramework" folder in "BootRomDumperFramework" target */,
+			);
+			path = BootRomDumperFramework;
+			sourceTree = "<group>";
+		};
+		14A5B2972D819E69003CFEB0 /* BootRomDumperFrameworkTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = BootRomDumperFrameworkTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -38,6 +77,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14A5B2872D819E68003CFEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5B2902D819E68003CFEB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A5B2942D819E69003CFEB0 /* BootRomDumperFramework.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				14A5B2712D819A12003CFEB0 /* BootRom Dumper Swift */,
+				14A5B28B2D819E68003CFEB0 /* BootRomDumperFramework */,
+				14A5B2972D819E69003CFEB0 /* BootRomDumperFrameworkTests */,
+				14A5B2A72D819FF2003CFEB0 /* Frameworks */,
 				14A5B2702D819A12003CFEB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,11 +110,30 @@
 			isa = PBXGroup;
 			children = (
 				14A5B26F2D819A12003CFEB0 /* BootRom Dumper Swift */,
+				14A5B28A2D819E68003CFEB0 /* BootRomDumperFramework.framework */,
+				14A5B2932D819E68003CFEB0 /* BootRomDumperFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
+		14A5B2A72D819FF2003CFEB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		14A5B2852D819E68003CFEB0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		14A5B26E2D819A12003CFEB0 /* BootRom Dumper Swift */ = {
@@ -82,6 +158,52 @@
 			productReference = 14A5B26F2D819A12003CFEB0 /* BootRom Dumper Swift */;
 			productType = "com.apple.product-type.tool";
 		};
+		14A5B2892D819E68003CFEB0 /* BootRomDumperFramework */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A5B29C2D819E69003CFEB0 /* Build configuration list for PBXNativeTarget "BootRomDumperFramework" */;
+			buildPhases = (
+				14A5B2852D819E68003CFEB0 /* Headers */,
+				14A5B2862D819E68003CFEB0 /* Sources */,
+				14A5B2872D819E68003CFEB0 /* Frameworks */,
+				14A5B2882D819E68003CFEB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				14A5B28B2D819E68003CFEB0 /* BootRomDumperFramework */,
+			);
+			name = BootRomDumperFramework;
+			packageProductDependencies = (
+			);
+			productName = BootRomDumperFramework;
+			productReference = 14A5B28A2D819E68003CFEB0 /* BootRomDumperFramework.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		14A5B2922D819E68003CFEB0 /* BootRomDumperFrameworkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14A5B29F2D819E69003CFEB0 /* Build configuration list for PBXNativeTarget "BootRomDumperFrameworkTests" */;
+			buildPhases = (
+				14A5B28F2D819E68003CFEB0 /* Sources */,
+				14A5B2902D819E68003CFEB0 /* Frameworks */,
+				14A5B2912D819E68003CFEB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				14A5B2962D819E69003CFEB0 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				14A5B2972D819E69003CFEB0 /* BootRomDumperFrameworkTests */,
+			);
+			name = BootRomDumperFrameworkTests;
+			packageProductDependencies = (
+			);
+			productName = BootRomDumperFrameworkTests;
+			productReference = 14A5B2932D819E68003CFEB0 /* BootRomDumperFrameworkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +215,12 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					14A5B26E2D819A12003CFEB0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					14A5B2892D819E68003CFEB0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					14A5B2922D819E68003CFEB0 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -112,9 +240,28 @@
 			projectRoot = "";
 			targets = (
 				14A5B26E2D819A12003CFEB0 /* BootRom Dumper Swift */,
+				14A5B2892D819E68003CFEB0 /* BootRomDumperFramework */,
+				14A5B2922D819E68003CFEB0 /* BootRomDumperFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14A5B2882D819E68003CFEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5B2912D819E68003CFEB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		14A5B26B2D819A12003CFEB0 /* Sources */ = {
@@ -124,7 +271,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		14A5B2862D819E68003CFEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14A5B28F2D819E68003CFEB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		14A5B2962D819E69003CFEB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 14A5B2892D819E68003CFEB0 /* BootRomDumperFramework */;
+			targetProxy = 14A5B2952D819E69003CFEB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		14A5B2742D819A12003CFEB0 /* Debug */ = {
@@ -267,6 +436,106 @@
 			};
 			name = Release;
 		};
+		14A5B29D2D819E69003CFEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = J7TFD32G4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumperFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		14A5B29E2D819E69003CFEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = J7TFD32G4P;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumperFramework;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		14A5B2A02D819E69003CFEB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7TFD32G4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumperFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		14A5B2A12D819E69003CFEB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J7TFD32G4P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumperFrameworkTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +553,24 @@
 			buildConfigurations = (
 				14A5B2772D819A12003CFEB0 /* Debug */,
 				14A5B2782D819A12003CFEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A5B29C2D819E69003CFEB0 /* Build configuration list for PBXNativeTarget "BootRomDumperFramework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A5B29D2D819E69003CFEB0 /* Debug */,
+				14A5B29E2D819E69003CFEB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14A5B29F2D819E69003CFEB0 /* Build configuration list for PBXNativeTarget "BootRomDumperFrameworkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14A5B2A02D819E69003CFEB0 /* Debug */,
+				14A5B2A12D819E69003CFEB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
