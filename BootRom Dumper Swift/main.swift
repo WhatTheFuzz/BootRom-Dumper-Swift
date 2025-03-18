@@ -30,24 +30,14 @@ func getiPhoneDevice() -> io_object_t {
         return IO_OBJECT_NULL
     }
     while case let device = IOIteratorNext(iter), device != IO_OBJECT_NULL {
-        
-        guard let productID = device.productID() else {
-            log.error("Couldn't get productID of device, skipping...")
-            continue
-        }
-        log.debug("[*] Found device with productID \(productID).")
-
-        let name: String? = device.name()
-        
-        if name == "iPhone" || name == "Apple Mobile Device (Recovery Mode)" {
+        if device.isIPhone() || device.isInRecoveryMode() || device.isInDFUMode() {
             return device
         }
-        // Otherwise, release the device and check the next ones.
-        log.debug("[*] Found \(String(describing: name)), skipping...")
-        IOObjectRelease(device);
+        log.info("Found device with productID \(String(describing: device.productID())), skipping...")
+        IOObjectRelease(device)
+        continue
     }
     return IO_OBJECT_NULL
-    
 }
 
 
@@ -72,12 +62,17 @@ func main() -> Int32 {
         return EXIT_FAILURE
     }
     /* Convert the model number to the actual product name (iPhone 3G, etc). */
-    guard let productName = modelToProductName[model] else {
-        log.error("Unknown product name for model number: \(model).")
+    if let productName = modelToProductName[model] {
+        log.info("[+] Product name: \(productName) (\(model))")
+    } else {
+        log.info("[*] Unknown product name for model number: \(model).")
+    }
+    
+    if !device.isInDFUMode() {
+        log.error("[-] Device is not in DFU mode, exiting.")
         return EXIT_FAILURE
     }
-    log.info("[+] Product name: \(productName) (\(model))")
-    
+    log.info("[+] Found device in DFU mode, continuing...")
     
     return EXIT_SUCCESS
 }

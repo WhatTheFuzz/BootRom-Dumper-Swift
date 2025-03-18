@@ -18,8 +18,14 @@ public let RecoveryProductIDs: [Int] = [0x1280, 0x1281]
 /**
  - Note: See reference of USB Product IDs from the [Apple Wiki](https://theapplewiki.com/wiki/USB_Product_IDs).
  */
+public let IPhoneProductIDs: [Int] = [0x1290, 0x1292]
+
+/**
+ - Note: See reference of USB Product IDs from the [Apple Wiki](https://theapplewiki.com/wiki/USB_Product_IDs).
+ */
 public let productIDToModel: Dictionary<Int, String> = [
     0x1222: "iPhone1,1, iPhone 1,2, and iPod1,1 (DFU Mode)",
+    0x1227: "iPhone1,2 (DFU Mode)",
     0x1280: "Unknown (Recovery Mode)",
     0x1281: "iPhone1,1 (Recovery Mode)",
     0x1290: "iPhone1,1",

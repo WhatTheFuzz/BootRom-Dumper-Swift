@@ -68,12 +68,20 @@ public extension io_object_t {
     }
     
     /**
+     - Returns: YES if the device's productID is in the list of known iPhones.
+     */
+    func isIPhone() -> Bool {
+        guard let productID = self.productID() else { return false }
+        return IPhoneProductIDs.contains(Int(truncating: productID))
+    }
+    
+    /**
      - Returns: YES if the device's productID is in the list of known recovery
      modes.
      - Note: See global list `RecoveryProductIDs`.
      */
     func isInRecoveryMode() -> Bool {
-        guard let productID = productID() else { return false }
+        guard let productID = self.productID() else { return false }
         return RecoveryProductIDs.contains(Int(truncating: productID))
     }
     
