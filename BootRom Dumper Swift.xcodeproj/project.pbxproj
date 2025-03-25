@@ -23,12 +23,12 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		14A5B26D2D819A12003CFEB0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -46,11 +46,48 @@
 			);
 			target = 14A5B2892D819E68003CFEB0 /* BootRomDumperFramework */;
 		};
+		14ACEABF2D916BF3009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "BootRom Dumper Swift" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Sources/Payload/payload.o,
+			);
+			target = 14A5B26E2D819A12003CFEB0 /* BootRom Dumper Swift */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		14ACEAC12D916CF6009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Bundle Resources" phase from "BootRomDumperFramework" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 14A5B2882D819E68003CFEB0 /* Resources */;
+			membershipExceptions = (
+				Sources/Payload/payload.o,
+			);
+		};
+		14ACEAC32D916D17009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Files" phase from "BootRom Dumper Swift" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 14A5B26D2D819A12003CFEB0 /* CopyFiles */;
+			membershipExceptions = (
+				Sources/Payload/payload.o,
+			);
+		};
+		14ACEAC52D916D24009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Bundle Resources" phase from "BootRomDumperFrameworkTests" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 14A5B2912D819E68003CFEB0 /* Resources */;
+			membershipExceptions = (
+				Sources/Payload/payload.o,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		14A5B2712D819A12003CFEB0 /* BootRom Dumper Swift */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				14ACEABF2D916BF3009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "BootRom Dumper Swift" target */,
+				14ACEAC32D916D17009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Files" phase from "BootRom Dumper Swift" target */,
+				14ACEAC12D916CF6009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Bundle Resources" phase from "BootRomDumperFramework" target */,
+				14ACEAC52D916D24009BEC27 /* Exceptions for "BootRom Dumper Swift" folder in "Copy Bundle Resources" phase from "BootRomDumperFrameworkTests" target */,
+			);
 			path = "BootRom Dumper Swift";
 			sourceTree = "<group>";
 		};
@@ -420,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7TFD32G4P;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -431,6 +469,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7TFD32G4P;
 				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seandeaton.BootRomDumper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

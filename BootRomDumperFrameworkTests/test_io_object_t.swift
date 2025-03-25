@@ -33,7 +33,6 @@ struct test_io_object_t {
         if device == IO_OBJECT_NULL {
             fatalError( "Failed to find a valid device. Is there a USB device plugged in?")
         }
-
     }
     
     @Test("Verify a valid name is returned.")
@@ -52,5 +51,17 @@ struct test_io_object_t {
     func productID() {
         #expect(self.device != IO_OBJECT_NULL, "No device found to get the productID of.")
         #expect(self.device.productID() != 0, "Failed to get the product ID of the device.")
+    }
+    
+    @Test("Get the plugin interface.")
+    func pluginInterface() {
+        #expect(self.device != IO_OBJECT_NULL, "No device found to get the plugin interface of.")
+        #expect(self.device.pluginInterface() != nil, "Failed to get the plugin interface of the device.")
+    }
+    
+    @Test("Get the device interface from the plugin.")
+    func deviceInterface() {
+        #expect(self.device != IO_OBJECT_NULL, "No device found to get the device interface from the plugin of.")
+        #expect(self.device.deviceInterface() != nil, "Failed to get the device interface from the plugin of the device.")
     }
 }

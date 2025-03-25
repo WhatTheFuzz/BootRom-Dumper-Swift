@@ -6,6 +6,7 @@
 //
 
 import IOKit
+import IOKit.usb
 
 public extension io_object_t {
     /**
@@ -92,5 +93,60 @@ public extension io_object_t {
     func isInDFUMode() -> Bool {
         guard let productID = productID() else { return false }
         return DFUProductIDs.contains(Int(truncating: productID))
+    }
+    
+    /**
+     Obtains the a plugin interface for the kIOUSBDeviceUserClientTypeID service.
+     - Returns: An optional double pointer to the IOCFPlugInInterface.
+     */
+    func pluginInterface() -> UnsafeMutablePointer<UnsafeMutablePointer<IOCFPlugInInterface>?>? {
+        var pluginInterfacePtrPtr: UnsafeMutablePointer<UnsafeMutablePointer<IOCFPlugInInterface>?>? = nil
+        var score: Int32 = 0
+        
+        let kr = IOCreatePlugInInterfaceForService(
+            self,
+            kIOUSBDeviceUserClientTypeID,
+            kIOCFPlugInInterfaceID,
+            &pluginInterfacePtrPtr,
+            &score
+        )
+        
+        guard kr == kIOReturnSuccess else {
+            return nil
+        }
+        return pluginInterfacePtrPtr
+    }
+    
+    /**
+     Obtains the device's interface from the plugin interface.
+     - Returns: An optional double pointer to the IOUSBDeviceInterface.
+     */
+    func deviceInterface() -> UnsafeMutablePointer<UnsafeMutablePointer<IOUSBDeviceInterface>?>? {
+        // First get the plugin interface.
+        guard let pluginInterfacePtrPtr = self.pluginInterface(),
+              let pluginInterfacePtr = pluginInterfacePtrPtr.pointee else {
+            print("Could not get plugin interface pointee, exiting.")
+            return nil
+        }
+        print("[+] Got plugin interface, continuing...")
+        
+        // Now query for the device interface.
+        var deviceInterfacePtrPtr: UnsafeMutablePointer<UnsafeMutablePointer<IOUSBDeviceInterface>?>?
+        let queryResult = withUnsafeMutablePointer(to: &deviceInterfacePtrPtr) {
+            $0.withMemoryRebound(to: Optional<LPVOID>.self, capacity: 1) { rawPtr in
+                // QueryInterface expects a pointer to a raw pointer.
+                pluginInterfacePtr.pointee.QueryInterface(
+                    pluginInterfacePtrPtr,
+                    CFUUIDGetUUIDBytes(kIOUSBDeviceInterfaceID),
+                    rawPtr
+                )
+            }
+        }
+        guard queryResult == kIOReturnSuccess,
+              let deviceInterfacePtr = deviceInterfacePtrPtr,
+              deviceInterfacePtr.pointee != nil else {
+            fatalError("Unable to get device interface, error: \(queryResult)")
+        }
+        return deviceInterfacePtr
     }
 }
